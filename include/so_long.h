@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/11/27 17:06:44 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:49:16 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct s_map
 }	t_map;
 
 //GLOBAL GAME STATUS
-typedef struct so_long
+typedef struct s_game
 {
 	t_player_position	player;
 	t_mlx				mlx;
