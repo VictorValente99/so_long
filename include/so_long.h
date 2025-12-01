@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/11/27 17:49:16 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/01 18:30:34 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@
 #include "../libs/lib_ft/libft.h"
 #include <fcntl.h>
 
-#define SPRITE_SIZE 32
+# define WALL '1'
+# define FLOOR '0'
+# define PLAYER 'P'
+# define COLLECT 'C'
+# define EXIT 'E'
+
+#define SPRITE_SIZE 64
 
 #define FLOOR_SPRITE "path"
 #define WALL_SPRITE "path"
@@ -30,7 +36,7 @@
 #define PLAYER_UP_SPRITE "path"
 #define PLAYER_DOWN_SPRITE "path"
 #define PLAYER_LEFT_SPRITE "path"
-#define PLAYER_RIGTH_SPRITE "path"
+#define PLAYER_RIGHT_SPRITE "path"
 
 #define KEY_W 119
 #define KEY_A 97
@@ -47,8 +53,8 @@
 // ESTRUTURA DE DADOS PARA USO DA MINILIBX STATUS
 typedef struct s_mlx
 {
-	void	*mlx_ptr;
-	void	*win_ptr;
+	void	*mlx;
+	void	*win;
 }	t_mlx;
 
 //SPRITES
@@ -62,11 +68,13 @@ typedef struct s_img
 }	t_img;
 
 //PLAYER POSITION
-typedef struct s_player_position
+typedef struct s_player
 {
-	int	x_pos;
-	int	y_pos;
-	int	movement_counter;
+	int	direction;
+	int	x;
+	int	y;
+	int	steps;
+	int	sprite[4];
 } t_player_position;
 
 //MAPA
@@ -88,6 +96,5 @@ typedef struct s_game
 	t_map				map;
 	t_img				img;
 }	t_game;
-
 
 #endif
