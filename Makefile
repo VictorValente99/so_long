@@ -7,7 +7,7 @@ SRCS =
 GNL_SRCS = 
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -Iincludes -Ilibs/minilibx -Ilibs/get_next_line -Ilibs/libft -Ilibs/ft_printf
+CFLAGS = -Wall -Werror -Wextra -g -Iinclude -Ilibs/minilibx -Ilibs/get_next_line -Ilibs/libft -Ilibs/ft_printf
 
 MLX = -Llibs/minilibx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
 LIBFT = libs/libft/libft.a
