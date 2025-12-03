@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:23:47 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/01 17:25:39 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/02 18:10:55 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	map_receveid(t_game *game)
 		i++;
 	game->map.height = i;
 	if (i > 0)
-		game->map.width = ft_strlen(game->map.grid[i]);
+		game->map.width = ft_strlen(game->map.grid[0]);
 }
 
 int	map_read(t_game *game, char *map_path)
