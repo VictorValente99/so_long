@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:59:13 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 19:36:53 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:32:05 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	map_check_borders(t_game *game)
 int	validate_map(t_game *game)
 {
 	if (!game || !game->map.grid)
-		return (put_error("No map receveid"));
+		return (put_error("No map received"));
 	if (!is_map_retangular(game->map.grid))
 		return (0);
 	if (!map_elements(game->map.grid))

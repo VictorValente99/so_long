@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 19:35:20 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:34:11 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 #define KEY_UP 65362
 #define KEY_LEFT 65361
 #define KEY_DOWN 65364
-#define KEY_RIGTH 65363
+#define KEY_RIGHT 65363
 
 #define ESC 65307
 
@@ -74,7 +74,6 @@ typedef struct s_player
 	int	x;
 	int	y;
 	int	steps;
-	int	sprite[4];
 } t_player_position;
 
 //MAPA
@@ -84,7 +83,7 @@ typedef struct s_map
 	int		width;//largura
 	int		height;//altura
 	int		total_c;//total de coletaveis
-	int		total_p;// posição inicial do p 
+	int		total_p;// total de p 
 	int		total_e;//total de saídas
 }	t_map;
 
@@ -103,16 +102,17 @@ typedef struct s_game
 	t_img				img;
 }	t_game;
 
-int		map_check_extension(char *filename, char *extension);
-int		validate_map(t_game *game);
-int		check_valid_path(t_game *game);
-int		validate_elements_count(t_game *game);
-int		put_error(char *message);
-int		map_receive(t_game *game, char *filename);
-int		game_init(t_game *game);
+int	is_true_element(char c);
+int	map_elements(char **grid);
+int	validate_elements_count(t_game *game);
+int	check_valid_path(t_game *game);
+int	map_read(t_game *game, const char *map_path);
+int	validate_map(t_game *game);
+int	map_check_extension(const char *filename, const char *extension);
+int	put_error(char *message);
 
 /* Protótipos - Sprites */
-void	load_sprites(t_game *game);
+int		load_sprites(t_game *game);
 void	free_sprites(t_game *game);
 /* Protótipos - Renderização */
 void	render_game(t_game *game);

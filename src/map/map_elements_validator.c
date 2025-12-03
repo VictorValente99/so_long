@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:50:29 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 19:37:29 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:32:31 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	is_true_element(char c)
 	return (0);
 }
 
-static int	map_elements(char **grid)
+int	map_elements(char **grid)
 {
 	int	x;
 	int	y;
@@ -35,7 +35,7 @@ static int	map_elements(char **grid)
 		while (grid[y][x] != '\0')
 		{
 			if (!is_true_element(grid[y][x]))
-				return (put_error("Invalid char in the map\n"));
+				return (put_error("Invalid char in the map"));
 			x++;
 		}
 		y++;
@@ -69,7 +69,7 @@ static void	count_elements(char **grid, int *p, int *c, int *e)
 	}
 }
 
-static int	validate_elements_count(t_game *game)
+int	validate_elements_count(t_game *game)
 {
 	int	player;
 	int	exit;
@@ -77,9 +77,9 @@ static int	validate_elements_count(t_game *game)
 
 	count_elements(game->map.grid, &player, &exit, &collect);
 	if (player != 1)
-		return (put_error("Map must have at least one player"));
+		return (put_error("Map must have one player"));
 	if (exit != 1)
-		return (put_error("Map must have at least one exit"));
+		return (put_error("Map must have one exit"));
 	if (collect < 1)
 		return (put_error("Map must have at least one collectible"));
 	game->map.total_c = collect;

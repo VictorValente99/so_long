@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:23:47 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/02 18:10:55 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:33:00 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	map_get_lines(int *fd, char **map)
 		if (!temp)
 		{
 			free(*map);
-			return (put_error("Memory allocation have failed."));
+			return (put_error("Memory allocation has failed."));
 		}
 		free(*map);
 		*map = temp;
@@ -35,7 +35,7 @@ static int	map_get_lines(int *fd, char **map)
 	return (1);
 }
 
-static void	map_receveid(t_game *game)
+static void	map_set_dimensions(t_game *game)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ static void	map_receveid(t_game *game)
 		game->map.width = ft_strlen(game->map.grid[0]);
 }
 
-int	map_read(t_game *game, char *map_path)
+int	map_read(t_game *game, const char *map_path)
 {
 	char	*map;
 	int		fd;
@@ -68,6 +68,6 @@ int	map_read(t_game *game, char *map_path)
 	close(fd);
 	if (!game->map.grid || !game->map.grid[0])
 		return (put_error("Map parsing has failed"));
-	map_receveid(game);
+	map_set_dimensions(game);
 	return (1);
 }
