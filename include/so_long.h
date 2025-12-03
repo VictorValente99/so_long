@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/01 18:30:34 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/03 19:35:20 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ typedef struct s_map
 	int		total_e;//total de saídas
 }	t_map;
 
+typedef struct s_path_data
+{
+	int	collected;
+	int	exit_found;
+}	t_path_data;
+
 //GLOBAL GAME STATUS
 typedef struct s_game
 {
@@ -96,5 +102,24 @@ typedef struct s_game
 	t_map				map;
 	t_img				img;
 }	t_game;
+
+int		map_check_extension(char *filename, char *extension);
+int		validate_map(t_game *game);
+int		check_valid_path(t_game *game);
+int		validate_elements_count(t_game *game);
+int		put_error(char *message);
+int		map_receive(t_game *game, char *filename);
+int		game_init(t_game *game);
+
+/* Protótipos - Sprites */
+void	load_sprites(t_game *game);
+void	free_sprites(t_game *game);
+/* Protótipos - Renderização */
+void	render_game(t_game *game);
+/* Protótipos - Input */
+int		key_press(int keycode, t_game *game);
+/* Protótipos - Cleanup */
+void	cleanup_game(t_game *game);
+void	exit_game(t_game *game, char *message);
 
 #endif
