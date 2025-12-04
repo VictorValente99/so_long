@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 21:44:23 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/04 01:59:47 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@
 
 #define SPRITE_SIZE 32
 
-#define FLOOR_SPRITE "/assets/sprites/floor.xpm"
-#define WALL_SPRITE "/assets/sprites/wall.xpm"
-#define COLLECTIBLE_SPRITE "/assets/sprites/collectible.xpm"
-#define EXIT_SPRITE "/assets/sprites/exit.xpm"
-#define PLAYER_SPRITE "/assets/sprites/player.xpm"
+#define FLOOR_SPRITE "./assets/sprites/floor.xpm"
+#define WALL_SPRITE "./assets/sprites/wall.xpm"
+#define COLLECTIBLE_SPRITE "./assets/sprites/collectible.xpm"
+#define EXIT_SPRITE "./assets/sprites/exit.xpm"
+#define PLAYER_SPRITE "./assets/sprites/player.xpm"
 
 #define KEY_W 119
 #define KEY_A 97
@@ -107,6 +107,7 @@ int		map_check_extension(const char *filename, const char *extension);
 int		put_error(char *message);
 int		load_sprites(t_game *game);
 void	free_sprites(t_game *game);
+int		game_init(t_game *game);
 
 /* Protótipos - Renderização */
 void	render_game(t_game *game);
