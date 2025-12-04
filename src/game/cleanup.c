@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 01:32:37 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/04 02:06:37 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/04 02:29:10 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	free_map(char **grid)
 	}
 	free(grid);
 }
+
 void	cleanup_game(t_game *game)
 {
 	free_sprites(game);
@@ -39,6 +40,7 @@ void	cleanup_game(t_game *game)
 		free(game->mlx.mlx);
 	}
 }
+
 void	exit_game(t_game *game, char *message)
 {
 	if (message)

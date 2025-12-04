@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 21:43:09 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 21:47:16 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/04 02:29:35 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ void	free_sprites(t_game *game)
 		mlx_destroy_image(game->mlx.mlx, game->img.collectible);
 	if (game->img.exit)
 		mlx_destroy_image(game->mlx.mlx, game->img.exit);
-		
 }

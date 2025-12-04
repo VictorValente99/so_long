@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 01:43:11 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/04 02:00:39 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/04 02:32:08 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,3 @@ int	main(int argc, char **argv)
 	mlx_loop(game.mlx.mlx);
 	return (0);
 }
-

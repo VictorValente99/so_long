@@ -6,18 +6,18 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/04 01:59:47 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/04 02:20:22 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "../libs/minilibx/mlx.h"
-#include "../libs/ft_printf/ft_printf.h"
-#include "../libs/get_next_line/get_next_line.h"
-#include "../libs/lib_ft/libft.h"
-#include <fcntl.h>
+# include "../libs/minilibx/mlx.h"
+# include "../libs/ft_printf/ft_printf.h"
+# include "../libs/get_next_line/get_next_line.h"
+# include "../libs/lib_ft/libft.h"
+# include <fcntl.h>
 
 # define WALL '1'
 # define FLOOR '0'
@@ -25,34 +25,32 @@
 # define COLLECT 'C'
 # define EXIT 'E'
 
-#define SPRITE_SIZE 32
+# define SPRITE_SIZE 32
 
-#define FLOOR_SPRITE "./assets/sprites/floor.xpm"
-#define WALL_SPRITE "./assets/sprites/wall.xpm"
-#define COLLECTIBLE_SPRITE "./assets/sprites/collectible.xpm"
-#define EXIT_SPRITE "./assets/sprites/exit.xpm"
-#define PLAYER_SPRITE "./assets/sprites/player.xpm"
+# define FLOOR_SPRITE "./assets/sprites/floor.xpm"
+# define WALL_SPRITE "./assets/sprites/wall.xpm"
+# define COLLECTIBLE_SPRITE "./assets/sprites/collectible.xpm"
+# define EXIT_SPRITE "./assets/sprites/exit.xpm"
+# define PLAYER_SPRITE "./assets/sprites/player.xpm"
 
-#define KEY_W 119
-#define KEY_A 97
-#define KEY_S 115
-#define KEY_D 100
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
 
-#define KEY_UP 65362
-#define KEY_LEFT 65361
-#define KEY_DOWN 65364
-#define KEY_RIGHT 65363
+# define KEY_UP 65362
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
 
-#define ESC 65307
+# define ESC 65307
 
-// ESTRUTURA DE DADOS PARA USO DA MINILIBX STATUS
 typedef struct s_mlx
 {
 	void	*mlx;
 	void	*win;
 }	t_mlx;
 
-//SPRITES
 typedef struct s_img
 {
 	void	*wall;//1
@@ -62,16 +60,14 @@ typedef struct s_img
 	void	*exit;//E
 }	t_img;
 
-//PLAYER POSITION
 typedef struct s_player
 {
 	int	direction;
 	int	x;
 	int	y;
 	int	steps;
-} t_player_position;
+}	t_player_position;
 
-//MAPA
 typedef struct s_map
 {
 	char	**grid;//vetor
@@ -88,7 +84,6 @@ typedef struct s_path_data
 	int	exit_found;
 }	t_path_data;
 
-//GLOBAL GAME STATUS
 typedef struct s_game
 {
 	t_player_position	player;
@@ -109,11 +104,8 @@ int		load_sprites(t_game *game);
 void	free_sprites(t_game *game);
 int		game_init(t_game *game);
 
-/* Protótipos - Renderização */
 void	render_game(t_game *game);
-/* Protótipos - Input */
 int		key_press(int keycode, t_game *game);
-/* Protótipos - Cleanup */
 void	cleanup_game(t_game *game);
 void	exit_game(t_game *game, char *message);
 

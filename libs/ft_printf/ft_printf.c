@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 13:13:42 by victde-s          #+#    #+#             */
-/*   Updated: 2025/10/21 16:13:40 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/04 02:22:52 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ int	ft_format_checker(char format, va_list ap)
 {
 	unsigned long int	ptr;
 
-	if(!format)
-		return (-1)
-
+	if (!format)
+		return (-1);
 	if (format == '%')
 		return (ft_putchar('%'));
 	else if (format == 'c')
