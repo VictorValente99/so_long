@@ -52,6 +52,8 @@ static void	find_player(t_game *game, int *x, int *y)
 			{
 				*x = j;
 				*y = i;
+				game->player.x = j;
+				game->player.y = i;
 				return ;
 			}
 			j++;
