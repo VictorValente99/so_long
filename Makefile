@@ -2,12 +2,24 @@ NAME = so_long
 
 HEADERS = include/so_long.h
 
-SRCS = 
+SRCS = src/main.c \
+       src/game/cleanup.c \
+       src/game/game_init.c \
+       src/input/key_handler.c \
+       src/map/map_elements_validator.c \
+       src/map/map_path_validator.c \
+       src/map/map_receive.c \
+       src/map/map_struct_validator.c \
+       src/map/map_utils.c \
+       src/render/render.c \
+       src/sprites/sprite_loader.c \
+       utils/free_sprites.c \
+       utils/put_error.c
 
-GNL_SRCS = 
+OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -Iinclude -Ilibs/minilibx -Ilibs/get_next_line -Ilibs/libft -Ilibs/ft_printf
+CFLAGS = -Wall -Werror -Wextra -g -Iinclude -Ilibs/minilibx -Ilibs/get_next_line -Ilibs/lib_ft -Ilibs/ft_printf
 
 MLX = -Llibs/minilibx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
 LIBFT = libs/libft/libft.a
