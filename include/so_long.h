@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:41:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 20:34:11 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/03 21:44:23 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,13 @@
 # define COLLECT 'C'
 # define EXIT 'E'
 
-#define SPRITE_SIZE 64
+#define SPRITE_SIZE 32
 
-#define FLOOR_SPRITE "path"
-#define WALL_SPRITE "path"
-#define COLLECTIBLE_SPRITE "path"
-#define EXIT_SPRITE "path"
-#define OUT_SPRITE "path"
-
-#define PLAYER_UP_SPRITE "path"
-#define PLAYER_DOWN_SPRITE "path"
-#define PLAYER_LEFT_SPRITE "path"
-#define PLAYER_RIGHT_SPRITE "path"
+#define FLOOR_SPRITE "/assets/sprites/floor.xpm"
+#define WALL_SPRITE "/assets/sprites/wall.xpm"
+#define COLLECTIBLE_SPRITE "/assets/sprites/collectible.xpm"
+#define EXIT_SPRITE "/assets/sprites/exit.xpm"
+#define PLAYER_SPRITE "/assets/sprites/player.xpm"
 
 #define KEY_W 119
 #define KEY_A 97
@@ -102,18 +97,17 @@ typedef struct s_game
 	t_img				img;
 }	t_game;
 
-int	is_true_element(char c);
-int	map_elements(char **grid);
-int	validate_elements_count(t_game *game);
-int	check_valid_path(t_game *game);
-int	map_read(t_game *game, const char *map_path);
-int	validate_map(t_game *game);
-int	map_check_extension(const char *filename, const char *extension);
-int	put_error(char *message);
-
-/* Protótipos - Sprites */
+int		is_true_element(char c);
+int		map_elements(char **grid);
+int		validate_elements_count(t_game *game);
+int		check_valid_path(t_game *game);
+int		map_read(t_game *game, const char *map_path);
+int		validate_map(t_game *game);
+int		map_check_extension(const char *filename, const char *extension);
+int		put_error(char *message);
 int		load_sprites(t_game *game);
 void	free_sprites(t_game *game);
+
 /* Protótipos - Renderização */
 void	render_game(t_game *game);
 /* Protótipos - Input */
