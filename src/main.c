@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 01:43:11 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/04 02:32:08 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:20:19 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	if (!game.mlx.win)
 		return (cleanup_game(&game), put_error("Failed to create window"));
 	render_game(&game);
-	mlx_hook(game.mlx.win, 2, 1L<<0, key_press, &game);
+	mlx_hook(game.mlx.win, 2, 1L << 0, key_press, &game);
 	mlx_hook(game.mlx.win, 17, 0, close_window, &game);
 	mlx_loop(game.mlx.mlx);
 	return (0);

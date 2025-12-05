@@ -16,20 +16,23 @@ SRCS = src/main.c \
        utils/free_sprites.c \
        utils/put_error.c
 
-OBJS = $(SRCS:.c=.o)
+GNL_SRCS = libs/get_next_line/get_next_line.c \
+			libs/get_next_line/get_next_line_utils.c
+
+OBJS = $(SRCS:.c=.o) $(GNL_SRCS:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g -Iinclude -Ilibs/minilibx -Ilibs/get_next_line -Ilibs/lib_ft -Ilibs/ft_printf
 
 MLX = -Llibs/minilibx -lmlx -L/usr/lib -lXext -lX11 -lm -lz
-LIBFT = libs/libft/libft.a
+LIBFT = libs/lib_ft/libft.a
 LIBFTPRINTF = libs/ft_printf/libftprintf.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C libs/minilibx
-	make -C libs/libft
+	make -C libs/lib_ft
 	make -C libs/ft_printf
 	$(CC) $(OBJS) $(LIBFT) $(LIBFTPRINTF) $(MLX) -o $(NAME)
 
@@ -39,13 +42,13 @@ $(NAME): $(OBJS)
 clean:
 	rm -f $(OBJS)
 	make clean -C libs/minilibx
-	make clean -C libs/libft
+	make clean -C libs/lib_ft
 	make clean -C libs/ft_printf
 
 fclean: clean
 	rm -f $(NAME)
 	make clean -C libs/minilibx
-	make fclean -C libs/libft
+	make fclean -C libs/lib_ft
 	make fclean -C libs/ft_printf
 
 re: fclean all
