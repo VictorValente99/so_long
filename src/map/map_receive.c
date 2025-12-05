@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 17:23:47 by victde-s          #+#    #+#             */
-/*   Updated: 2025/12/03 20:33:00 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 19:12:04 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ int	map_read(t_game *game, const char *map_path)
 	fd = open(map_path, O_RDONLY);
 	if (fd == -1)
 		return (put_error("The map couldn't be opened"));
-	map = ft_strdup("");
-	if (!map || !map_get_lines(&fd, &map))
+	map = NULL;
+	if (!map_get_lines(&fd, &map))
 	{
+		close(fd);
 		if (map)
 			free (map);
-		close(fd);
 		return (put_error("Memory allocation has failed"));
 	}
 	game->map.grid = ft_split(map, '\n');
