@@ -6,7 +6,7 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:59:33 by victde-s          #+#    #+#             */
-/*   Updated: 2025/11/12 15:54:26 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:36:45 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,6 @@ char	*ft_strchr(const char *s, int c)
 	if (c == '\0')
 		return ((char *)s);
 	return (NULL);
-}
-
-char	*ft_strjoin(char *str1, char *str2)
-{
-	int		i;
-	int		j;
-	char	*joined;
-
-	i = 0;
-	if (!str1 && !str2)
-		return (NULL);
-	joined = malloc(ft_len(str1) + ft_len(str2) + 1);
-	if (!joined)
-		return (free(str1), NULL);
-	while (str1 && str1[i])
-	{
-		joined[i] = str1[i];
-		i++;
-	}
-	j = 0;
-	while (str2 && str2[j])
-		joined[i++] = str2[j++];
-	joined[i] = '\0';
-	free(str1);
-	return (joined);
 }
 
 char	*ft_get_line(char *stash)

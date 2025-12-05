@@ -6,15 +6,15 @@
 /*   By: victde-s <victde-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:04:25 by victde-s          #+#    #+#             */
-/*   Updated: 2025/08/29 01:07:54 by victde-s         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:41:06 by victde-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *c)
+int	ft_strlen(const char *c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (c[i] != '\0')
